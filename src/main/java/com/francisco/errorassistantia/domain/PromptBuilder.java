@@ -13,17 +13,14 @@ public class PromptBuilder {
 
         String ubicacion = "Clase: " + clase + ", Método: " + metodo + ", Archivo: " + archivo + ", Línea: " + linea;
 
-        return """
-        Actúa como un asistente experto en Java. Analiza el siguiente error y responde de forma técnica, precisa y breve.
-        Formato requerido (máximo 5 líneas por punto, sin bloques de código, sin explicaciones largas, sin ejemplos).
-        1. Descripción breve del error.
-        2. Posibles causas (en viñetas).
-        3. Sugerencias rapidas en codigo para resolverlo (en viñetas).
-        4. Indica claramente en qué línea del código se originó el error.
-        
-        Error: %s
-        Ubicación: %s
-        """.formatted(error, ubicacion);
+        return "Actúa como un asistente experto en Java. Analiza el siguiente error y responde de forma técnica, precisa y breve.\n"
+                + "Formato requerido (máximo 5 líneas por punto, sin bloques de código, sin explicaciones largas, sin ejemplos).\n"
+                + "1. Descripción breve del error.\n"
+                + "2. Posibles causas (en viñetas).\n"
+                + "3. Sugerencias rápidas en código para resolverlo (en viñetas).\n"
+                + "4. Indica claramente en qué línea del código se originó el error.\n\n"
+                + "Error: " + error + "\n"
+                + "Ubicación: " + ubicacion;
     }
 
 
