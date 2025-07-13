@@ -1,4 +1,4 @@
-🎉 Esta es la primera versión oficial de **ErrorAssistantIA** 🎉
+ Esta es la primera versión oficial de **ErrorAssistantIA**
 
 `ErrorAssistantIA` es una librería Java que permite analizar errores y excepciones en tiempo de ejecución usando inteligencia artificial (IA) mediante Gemini (Google). Devuelve automáticamente:
 
