@@ -1,63 +1,90 @@
- Esta es la primera versión oficial de **ErrorAssistantIA**
+# 🚀 ErrorAssistantIA
 
-`ErrorAssistantIA` es una librería Java que permite analizar errores y excepciones en tiempo de ejecución usando inteligencia artificial (IA) mediante Gemini (Google). Devuelve automáticamente:
+[![Java](https://img.shields.io/badge/Java-11%2B-orange?style=flat-square)](https://openjdk.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/Version-0.0.2-brightgreen?style=flat-square)](https://github.com/codigo04/error-assistant-ia/releases)
 
-- ✅ Descripción breve del error  
-- 📌 Posibles causas  
-- 🛠️ Sugerencias rápidas para solucionarlo  
-- 📍 Línea exacta donde ocurrió el error  
+**Librería Java para análisis automático de errores con IA (Gemini de Google)**
 
-Ideal para entornos técnicos, backend, entornos educativos y desarrollo rápido.
+Analiza excepciones en tiempo real y obtén:
 
-¿Cómo usarla?
+- ✅ Descripción clara del error  
+- 🔍 Causas comunes  
+- 🛠️ Sugerencias prácticas  
+- 📍 Línea exacta donde ocurrió  
 
-1. Agrega el archivo `.jar` a tu proyecto.
+Ideal para desarrolladores backend, debugging técnico y proyectos educativos.
 
-2. Configura tu API Key de Gemini:
+---
 
-```java
-ClientConfigError config = ClientConfigError.builder()
-    .apiKey("TU_API_KEY")
-    .build();
+## ✨ Características principales
 
-ErrorAssistantIA.withConfig(config);
+| Función | Descripción |
+|--------|-------------|
+| ✅ | Explicación en lenguaje natural |
+| 🔍 | Detección de causas probables |
+| 🛠️ | Sugerencias para resolver el problema |
+| 📍 | Ubicación exacta del error |
+| ⚙️ | Integración con Maven/JitPack |
+
+---
+
+## 📦 Instalación (Maven)
+
+Agrega en tu `pom.xml`:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.codigo04</groupId>
+        <artifactId>error-assistant-ia</artifactId>
+        <version>0.0.2</version>
+    </dependency>
+</dependencies>
+
 ```
-
-3. Analiza excepciones capturadas:
+🚀 Uso Rápido
 
 ```java
+// 1. Configuración inicial
+ClientConfigError config = ClientConfigError.builder()
+    .apiKey("TU_API_KEY_DE_GEMINI") // Obtén key en: https://ai.google.dev/
+    .build();
+ErrorAssistantIA.withConfig(config);
+
+// 2. Análisis de errores
 try {
-    int resultado = 10 / 0;
+
+   int resultado = 10 / 0;
 } catch (Exception e) {
-     System.out.println(ErrorAssistantIA.analizaError(e).getDescripcion());
+  System.out.println(ErrorAssistantIA.analizaError(e).getDescripcion());
 }
 ```
-
-💡 Ejemplo de salida esperada:
-
+📝 Ejemplo de Salida
+```text
+🔴 Error: División por cero
+📌 Causas:
+   - Operación matemática inválida
+   - Falta validación del divisor
+🛠️ Soluciones:
+   - Validar que el divisor no sea cero
+   - Usar try-catch para ArithmeticException
+📍 Ubicación: Main.java (Línea 42)
 ```
-1. Descripción: Se intentó dividir por cero.
-2. Posibles causas:
-   - El divisor tiene valor cero.
-   - Falta de validación previa.
-3. Sugerencias:
-   - Validar divisor antes de dividir.
-   - Usar try-catch para manejar excepciones.
-4. Línea del error: Clase: Main, Línea: 12
-```
+📌 Requisitos
+Java 11+
 
-📦 Requisitos:
+API Key de Gemini
 
-- Java 11 o superior  
-- Conexión a internet  
-- API Key válida de Gemini (Google AI)
+Conexión a internet
 
-🧠 IA utilizada:
-
-Esta librería usa [Gemini](https://ai.google.dev/) para generar respuestas automáticas basadas en errores de Java.
-
-👨‍💻 Autor:
-
-Desarrollado por **Francisco Gutiérrez Cueva**  
-Versión: `v0.0.1`  
-Licencia: [MIT](https://opensource.org/licenses/MIT)
+📄 Licencia
+MIT © Francisco Gutiérrez Cueva
+✨ ¿Te gusta el proyecto? ¡Dale una ⭐ en el repo!
