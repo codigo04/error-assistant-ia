@@ -85,6 +85,12 @@ API Key de Gemini
 
 Conexión a internet
 
-📄 Licencia
-MIT © Francisco Gutiérrez Cueva
+👨‍💻 Autor  
+Desarrollado por Francisco Gutiérrez Cueva  
+
+📦 Versión actual: 0.0.2  
+
+📝 Licencia: MIT  
+
 ✨ ¿Te gusta el proyecto? ¡Dale una ⭐ en el repo!
+
